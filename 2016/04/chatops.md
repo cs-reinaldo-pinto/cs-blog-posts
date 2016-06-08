@@ -45,7 +45,11 @@ Eu fiz um pequeno projeto recentemente usando Docker para subir um Hubot e conec
 Grande parte dos plugins são configurados via variável de ambiente então se você passar seu token de acesso ao Slack, o nome e o canal para o bot. Tudo já funcionará com o simples comando abaixo:
 
 ```shell
-docker run --name mybot -it  -e HUBOT_SLACK_TOKEN='#######' -e Hubot_SLACK_TEAM='#######' -e Hubot_SLACK_BOTNAME='#######' -d pedrocesarti/hubot-slack
+docker run --name mybot -it  \
+ -e HUBOT_SLACK_TOKEN='#######' \
+ -e Hubot_SLACK_TEAM='#######' \
+ -e Hubot_SLACK_BOTNAME='#######' \
+ -d pedrocesarti/hubot-slack
 ```
 Após o comando acima, seu bot já estará conectado ao chat e esperando por comandos basta só chamar o nome dele e dar um help, meu bot se chama macgyver, então:
 
@@ -53,4 +57,5 @@ Após o comando acima, seu bot já estará conectado ao chat e esperando por com
 macgyver help
 ```
 Já mostraria todos os plugins ativados e como utilizá-los, conforme imagem abaixo.
+
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/d0mld4njpw70bmw/Screen%20Shot%202016-06-08%20at%207.13.36%20PM.png?dl=0"Hubot - Slack"></p>
