@@ -63,7 +63,11 @@ Já mostraria todos os plugins ativados e como utilizá-los, conforme imagem aba
 A documentação do repositório mostra algumas outras opções e customizações que podem ser criadas, então se divirta.
 
 ## E daqui pra frente?
-Depois de passarmos por muitas dores de cabeça com integrações no passado, estamos em uma época áurea em relação a integração e grande parte deste sucesso é a adoção cada vez mais pesada de APIs, tudo se tornou mais fácil, endpoints configurados, e tudo se resolve por meio de GETs e POSTs ;).
+Depois de passarmos por muitas dores de cabeça com integrações no passado, estamos em uma época áurea em relação a integração e grande parte deste sucesso é a adoção cada vez mais pesada de APIs, tudo se tornou mais fácil, endpoints configurados, e tudo se resolve por meio de GETs e POSTs que retornam um JSON perfeito para ser tratado ;).
 
-Levando em consideração que já temos inúmeros módulos já desenvolvidos para todos os bots, permitindo as mais variadas funcionalidades, como gerar um gráfico de utilização da rede, como inicializar uma instância na Amazoni AWS ou até mesmo criar uma regra no firewall e que eles permanecem expansíveis aguardando só um novo script para criar uma nova funcionalidade.  
+Levando em consideração que já temos inúmeros módulos já desenvolvidos para todos os bots, permitindo as mais variadas funcionalidades, como gerar um gráfico de utilização da rede, como inicializar uma instância na Amazoni AWS ou até mesmo criar uma regra no firewall e que eles permanecem expansíveis aguardando só um novo script para criar uma nova funcionalidade acredito então que a popularidade tende a continuar crescendo.  
+
+ChatOps talvez não seja realmente para todos os ambientes, mas quanto mais destruimos barreiras entre os times e deixamos todo o processo mais transparente tudo se torna mais fácil então se eu tenho uma mensagem para deixar no final deste post é:
+
+**USE CHATOPS E SEJA MAIS ÁGIL!!** 
 
