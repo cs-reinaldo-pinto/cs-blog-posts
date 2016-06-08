@@ -10,7 +10,6 @@ Nestes exemplos dados, basicamente toda a tecnologia já existia, mas ainda não
 
 A utilização dos chats e de certa automação neles também tiveram sua tentativa de aplicação outrora, desde o __BBSs__ (Bulletin Board System) na década de 70, até o __mIRC__ e __AOL__ na década de 90, passamos por inúmeras ferramentas que utilizavam de conceitos bem primitivos de comunicação colaborativa e notificação. Inclusive podemos citar o sugimento do primeiro chatbot em 1993, o [Eggdrop](http://www.eggheads.org), utilizado para notificações dentro de canais IRC surgiu como algo revolucionário, mas fora de contexto. Apesar de grande popularidade, no inîcio dos anos 2000 os chats perderam bastante espaço devido aos serviços de mensagem instantâneas e redes sociais, voltando a ter um pouco de espaço mais recentemente em serviços de atendimento ao cliente incorporado a sites de empresas, mas ainda assim sem uma grande aplicação.
 
-
 ## E agora?
 
 Mais um termo que surgiu recentemente e vem causando alvoroço é o tal **DevOps**, mas diferente de outros posts, o meu não tem por intenção discutir o que é ou deixa de ser DevOps. Não quero deixar pessoas emocionalmente abaladas pelo o que escrevo. E já que eu não estou aqui para definir se podemos ou não chamar DevOps de profissão, eu só queria compartilhar que temos alguns pilares comuns aos quem aderem ao tal DevOps. Esses pilares principais ficaram conhecidos como CAMS:
@@ -24,16 +23,34 @@ Mais um termo que surgiu recentemente e vem causando alvoroço é o tal **DevOps
 - Sharing
 	- A chave maior de tudo é compartilhar, compartilhar tudo que for possível. 
 
-Gostamos disso! Então a comunidade busca formas de se aproximar desses pilares para que os processo fiquem mais ajustados ou mesmo para permitir uma melhor gerência das informações. Mas em um ambiente de medição, automatização, e compartilhamento total alguns problemas surgem:
+Então a comunidade busca formas de se aproximar desses pilares para que os processo fiquem mais ajustados ou mesmo para permitir uma melhor gerência das informações. Mas em um ambiente de medição, automatização, e compartilhamento total alguns problemas surgem:
 
 - Como deixar todos os times (muitas vezes não só os times de produto, como desenvolvimento e operações) atualizados no processo? Como deixar todas as equipes na mesma "página"?
-
 - Como garantir que todos possam fazer de forma ágil as suas atividades e que isso fique visível a todos? Não queremos ter mais heróis que magicamente resolvem um problema sem ninguém mais saber como?
-
 - Como garantir certa uniformidade e processo no acesso as informações?
-
 - Como permitir uma unificação das ferramentas em um ambient só e não ter que fazer a "Dashboard das dashboards", aquela ferramenta que gerencia outras ferramentas?
 
+A resposta é simples, utilizando uma ferramenta interativa onde podemos criar comandos e scripts para automatizar tarefas das mais básicas as mais complexas. O CHAT então volta a tona, e independentemente do serviço de chat utilizado (Slack, Hipchat, Campfire, entre outros), temos inúmeras opções de bots para conectar a estes serviços. 
 
-A resposta é simples, utilizando um ambiente colaborativo onde podemos criar comandos e scripts para automatizar tarefas das mais básicas as mais complexas.
- 
+- [Hubot](https://hubot.github.com) (JavaScript e CoffeeScript)
+- [Lita](https://www.lita.io) (Ruby)
+- [Err..](http://errbot.io/en/latest/) (Python)  
+
+Verificando as documentações destas ferramentas, é possível verificar o quão customizåvel e extensíveis as mesmas são. Só necessitando adicionar um script da linguagem suportada para adicionar uma funcionalidade e converter algo digitado no chat para um comando para execução de uma tarefa específica. 
+
+Eu fiz um pequeno projeto recentemente usando Docker para subir um Hubot e conectar ao meu Slack pessoal e poder brincar tranquilamente, e encorajo a todos fazerem o mesmo, então se quiserem dar uma brincada inicial com ChatOps, verifiquem esse repositório.
+
+- [ChatOps Begginers](https://github.com/pedrocesar-ti/hubot-slack-docker)
+
+Grande parte dos plugins são configurados via variável de ambiente então se você passar seu token de acesso ao Slack, o nome e o canal para o bot. Tudo já funcionará com o simples comando abaixo:
+
+```shell
+docker run --name mybot -it  -e HUBOT_SLACK_TOKEN='#######' -e Hubot_SLACK_TEAM='#######' -e Hubot_SLACK_BOTNAME='#######' -d pedrocesarti/hubot-slack
+```
+Após o comando acima, seu bot já estará conectado ao chat e esperando por comandos basta só chamar o nome dele e dar um help, meu bot se chama macgyver, então:
+
+```
+macgyver help
+```
+Já mostraria todos os plugins ativados e como utilizá-los, conforme imagem abaixo.
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/d0mld4njpw70bmw/Screen%20Shot%202016-06-08%20at%207.13.36%20PM.png?dl=0"Hubot - Slack"></p>
