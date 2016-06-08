@@ -20,15 +20,20 @@ Mais um termo que surgiu recentemente e vem causando alvoroço é o tal **DevOps
 - Automation
 	- Automatizar tudo que for possível para permitir um ganho de performance e de produtividade.
 - Measurement
-	- Buscar dados em tudo que for possível, para se ter maior inteligência em tomada de decisões, e o mais importante, transparência na apresentação destes dados.
+	- Levantar dados Buscar dados de tudo que for possível, para se ter maior inteligência em tomada de decisões, e o mais importante, transparência na apresentação destes dados.
 - Sharing
 	- A chave maior de tudo é compartilhar, compartilhar tudo que for possível. 
 
 Gostamos disso! Então a comunidade busca formas de se aproximar desses pilares para que os processo fiquem mais ajustados ou mesmo para permitir uma melhor gerência das informações. Mas em um ambiente de medição, automatização, e compartilhamento total alguns problemas surgem:
 
-- Como deixar todos os times (muitas vezes não só os times de produto, como desenvolvimento e operações) atualizados no processo? Como deixar todas as equipes na mesma página?
+- Como deixar todos os times (muitas vezes não só os times de produto, como desenvolvimento e operações) atualizados no processo? Como deixar todas as equipes na mesma "página"?
+
 - Como garantir que todos possam fazer de forma ágil as suas atividades e que isso fique visível a todos? Não queremos ter mais heróis que magicamente resolvem um problema sem ninguém mais saber como?
+
 - Como garantir certa uniformidade e processo no acesso as informações?
+
 - Como permitir uma unificação das ferramentas em um ambient só e não ter que fazer a "Dashboard das dashboards", aquela ferramenta que gerencia outras ferramentas?
 
+
+A resposta é simples, utilizando um ambiente colaborativo onde podemos criar comandos e scripts para automatizar tarefas das mais básicas as mais complexas.
  
