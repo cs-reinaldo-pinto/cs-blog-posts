@@ -59,3 +59,11 @@ macgyver help
 Já mostraria todos os plugins ativados e como utilizá-los, conforme imagem abaixo.
 
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/d0mld4njpw70bmw/Screen%20Shot%202016-06-08%20at%207.13.36%20PM.png?dl=0"Hubot - Slack"></p>
+
+A documentação do repositório mostra algumas outras opções e customizações que podem ser criadas, então se divirta.
+
+## E daqui pra frente?
+Depois de passarmos por muitas dores de cabeça com integrações no passado, estamos em uma época áurea em relação a integração e grande parte deste sucesso é a adoção cada vez mais pesada de APIs, tudo se tornou mais fácil, endpoints configurados, e tudo se resolve por meio de GETs e POSTs ;).
+
+Levando em consideração que já temos inúmeros módulos já desenvolvidos para todos os bots, permitindo as mais variadas funcionalidades, como gerar um gráfico de utilização da rede, como inicializar uma instância na Amazoni AWS ou até mesmo criar uma regra no firewall e que eles permanecem expansíveis aguardando só um novo script para criar uma nova funcionalidade.  
+
