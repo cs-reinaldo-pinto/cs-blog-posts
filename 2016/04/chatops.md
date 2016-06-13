@@ -1,4 +1,4 @@
-# ChatOps - Um pouco de passado, a utilização no presente e a massificação no futuro.
+# ChatOps - Um review histórico e utilização daqui pra frente.
 
 ChatOps surgiu nos últimos anos como um modelo colaborativo no qual pessoas e ferramentas são conectadas, o que permite uma melhor interação entre os times dentro do ambiente como um todo.
 
@@ -14,7 +14,7 @@ A utilização dos chats e de certa automação deles também já teve sua tenta
 
 Mais um termo que surgiu recentemente e vem causando alvoroço é o tal **DevOps**, mas, diferente de outros posts, o meu não tem por intenção discutir o que é ou deixa de ser DevOps. Não quero deixar pessoas emocionalmente abaladas pelo que escrevo. E já que eu não estou aqui para definir se podemos ou não chamar DevOps de profissão, eu só queria compartilhar que temos alguns pilares comuns aos quem aderem ao tal DevOps. Esses pilares principais ficaram conhecidos como CAMS:
 
-- Culture: o principal intuito é diminuir as barreiras entre os times e permitir maior integração integração por meio de processos e sistemas menos burocráticos.
+- Culture: o principal intuito é diminuir as barreiras entre os times e permitir maior integração por meio de processos e sistemas menos burocráticos.
 - Automation: automatizar tudo que for possível para permitir ganho de performance e de produtividade.
 - Measurement: buscar dados de tudo o que for possível, para maior inteligência em tomada de decisões e, o mais importante, transparência na apresentação destes dados.
 - Sharing: a chave maior de tudo é compartilhar, compartilhar tudo que for possível. 
