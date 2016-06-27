@@ -1,6 +1,6 @@
 # Elastic Beanstalk vs. EC2 Cluster Service - Aplicações Dockerizadas
 
-Bom você já estudou sobre arquiteturas e viu que talvez a quebra de grande aplicações em microserviços seja o caminho para o futuro dos produtos que entregamos, diminuir complexidade, diminuir pontos de falha, reaproveitamento da infraestrura, automação de todo o processo, etc... São vários os motivos que levam a grande parte do setor migrar seus serviços cada vez mais complexos para esse "NOVO CONCEITO" (sim entre aspas e maiúsculo), porque o conceito não é tão novo assim né?! A ideia não é nova, mas agora temos diversas ferramentas para nos ajudar a colocar tudo isso junto e o mais impressionante de tudo, **FAZER TUDO FUNCIONAR**.
+Bom você já estudou sobre arquiteturas e viu que talvez a quebra de grande aplicações em microserviços seja o caminho para o futuro dos produtos que entregamos, diminuir complexidade, diminuir pontos de falha, reaproveitamento da infraestrura, automação de todo o processo, etc... São vários os motivos que levam a grande parte do setor migrar seus serviços cada vez mais complexos para esse "NOVO CONCEITO" (sim, entre aspas e maiúsculo), porque o conceito não é tão novo assim né?! A ideia não é nova, mas agora temos diversas ferramentas para ajudar-nos a colocar tudo isso junto e o mais impressionante de tudo, **FAZER TUDO FUNCIONAR**.
 
 Quando falamos em termos ferramentas atualmente, estamos falando de todas as tecnologias atuais que nos auxiliam e de muitos conceitos que voltaram a ativa "repaginados", como a própria computação em nuvem (virtualzação + serviço), automação de infraestrutura e IaaC, automação de deploy e porque não de CONTAINERS. 
 
@@ -10,8 +10,10 @@ Aí geralmente começa aquela discussão infinita sobre rodar container em produ
 
 ##AWS
 Você deve ter se perguntado algumas vezes, "porque discutir tudo isso?", ou então, "ué, não era um post sobre AWS?".
+A AWS serve dois serviços diferentes que permitem a gente deployar containers em produção. Mas e agora, qual a melhor solução?
 
-Pronto, você está no post certo, mas sempre é bom relembrar as necessidades que temos antes de tomar decisão entre alguma ferramenta ou tecnologia. Por isso, tanta discussão.
+Primeiramente, eu gostaria de 
+
 
 ###Elastic Beanstalk
 ###ECS
