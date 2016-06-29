@@ -37,7 +37,7 @@ O SAML é utilizado por mútiplos serviços de autenticação, como o ADFS da Mi
 
 O primeiro passo para a utilização da funcionalidade é a criação de um provedor no IAM e configurações de roles e permissões específicas, depois torna-se necessária somente o carregamento da feature no Cognito e desenvolvimento da feature para a sua plataforma de preferência.  
 
-<p align="center"><img src="https://dl.dropboxusercontent.com/s/Screen%20Shot%202016-06-29%20at%209.16.29%20AM.png?dl=0"Cognito - SAML"></p>
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/g5qcq5pkobdrj62/Screen%20Shot%202016-06-29%20at%209.16.29%20AM.png?dl=0"Cognito - SAML"></p>
 
 Para mais informações sobre a utilização do SAML pelo Cognito verifique a [documentação](http://docs.aws.amazon.com/cognito/latest/developerguide/saml-identity-provider.html) ou no [blog da AWS](https://mobile.awsblog.com/post/Tx28TCWLHIRK4GT/Announcing-SAML-Support-for-Amazon-Cognito).
 
