@@ -2,7 +2,6 @@
 
 Como de costume a Amazon não brinca em serviço e constantemente está lançando novas funcionalidades, ou melhorando aquelas que já existem. Neste mês de Junho, diversas melhorias em serviços e no alcance de serviços foram apresentadas. Esse post visa cobrir um pouco do que foi lançado neste mês, como o suporte do Amazon OpsWorks para trabalhar com o Centos 7, a disponibilização do serviço de *Last Accessed Data* do Amazon IAM para a região *South America* e o fantástico anúncio de suporte do Amazon Cognito a SAML.
   
-  
 
 ### OpsWorks e Centos
 
@@ -11,7 +10,7 @@ Agora o OpsWorks passa a dar suporte a instâncias e até mesmo servidores fora 
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/6mcg73ayvawnayb/Screen%20Shot%202016-06-28%20at%2010.15.41%20PM.png?dl=0"OpsWorks - Centos"></p>
 
 Para mais informações sobre o suporte a Centos e possíveis atualizações, verifique o [link](https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-os-linux.html#workinginstances-os-linux-centos) e usufrua de mais uma AMI preparada para rodar o OpsWorks.
-  
+---  
   
 
 ### Last Accessed Data para a região South America
@@ -25,7 +24,7 @@ Agora quando estiver na visualização de um usuário, grupo ou role, você tem 
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/s4otsk5ybalpfg6/Policy-centric-image-1ab.png?dl=0"IAM - Last Accessed Data"></p>
 
 *Imagem retirada do post de Kai Zhao no blog de segurança da AWS, para conferir o post na íntegra, [clique aqui](https://blogs.aws.amazon.com/security/post/Tx280RX2WH6WUD7/Remove-Unnecessary-Permissions-in-Your-IAM-Policies-by-Using-Service-Last-Access).*
-  
+--- 
   
 
 ### Amazon Cognito e SAML
