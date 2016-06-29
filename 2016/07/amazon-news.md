@@ -1,11 +1,11 @@
-# Amazon News – Pacotão de Junho
+# Amazon News – Passando a metade do ano, mas a inovação não para
 
-Como de costume a Amazon não brinca em serviço e constantemente está lançando novas funcionalidades, ou melhorando aquelas que já existem. Neste mês de Junho, diversas melhorias em serviços e no alcance de serviços foram apresentadas. Esse post visa cobrir um pouco do que foi lançado neste mês, como o suporte do Amazon OpsWorks para trabalhar com o Centos 7, a disponibilização do serviço de *Last Accessed Data* do Amazon IAM para a região *South America* e o fantástico anúncio de suporte do Amazon Cognito a SAML.
+Como de costume a Amazon não brinca em serviço e constantemente está lançando novas funcionalidades, ou melhorando aquelas que já existem. Neste mês de Junho, diversas melhorias em serviços e no alcance de serviços foram apresentadas. Esse post visa cobrir um pouco do que foi mostrado pela companhia neste mês, como o suporte do _Amazon OpsWorks_ para trabalhar com o CentOS, a disponibilização do serviço de *Last Accessed Data* do Amazon IAM para a região *South America* e o fantástico anúncio de suporte do Amazon Cognito a SAML providers.
   
 
 ### OpsWorks e Centos
 
-Agora o OpsWorks passa a dar suporte a instâncias e até mesmo servidores fora da sua stack (on-premises) rodando Centos 7, o suporte inicial prevê somente a versão 7 do sistema operacional e possíveis atualizações nos próximos anos, outra informação importante é que a versão do Chef suportada neste caso é somente a versão 12, então um pouco de cuidado com a versão utilizada atualmente em sua stack.
+Agora o OpsWorks passa a dar suporte a instâncias e até mesmo servidores fora da sua stack (on-premises) rodando Centos 7, o suporte inicial prevê somente a versão 7 do sistema operacional amigo do SysAdmin e possíveis atualizações nos próximos anos, a versão do Chef suportada neste caso é somente a versão 12, então vamos tomar um pouco de cuidado com a versão utilizada atualmente em sua stack.
 
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/6mcg73ayvawnayb/Screen%20Shot%202016-06-28%20at%2010.15.41%20PM.png?dl=0"OpsWorks - Centos"></p>
 
@@ -30,4 +30,9 @@ Agora quando estiver na visualização de um usuário, grupo ou role, você tem 
   
 ### Amazon Cognito e SAML
 
-Como geralmente citamos, por último, mas não menos importante
+Como geralmente dizemos...
+Por último, mas não menos importante. Temos aqui a estrela do nosso post (sim, podem me julgar por ter guardado para o final!). Agora o Cognito dá suporte a provedores de identificação que usam Security Assertion Markup Language (SAML). O SAML é um padrão aberto baseado em XML e que permite a troca de informação de autenticação e agora passa a ser suportado diretamente pelo o Cognito, não sendo mais necessárias adaptações tecnológicas usando Secure Token Service (STS) do IAM.
+SA
+
+
+Ficou alguma dúvida ou tem alguma contribuição? Aproveite os campos abaixo! E se você quer saber um pouco mais sobre os nossos serviços em AWS, [entre em contato com o nosso comercial](http://conteudo.concretesolutions.com.br/concrete-solutions-contato).
