@@ -33,9 +33,20 @@ Agora quando estiver na visualização de um usuário, grupo ou role, você tem 
 Como geralmente dizemos...
 Por último, mas não menos importante. Temos aqui a estrela do nosso post (sim, podem me julgar por ter guardado para o final!). Agora o Cognito dá suporte a provedores de identificação que usam Security Assertion Markup Language (SAML). O SAML é um padrão aberto baseado em XML e que permite a troca de informação de autenticação e agora passa a ser suportado diretamente pelo Amazon Cognito, não sendo mais necessárias "adaptações tecnológicas" usando Secure Token Service (STS) do IAM.
 
-O SAML é utilizado por mútiplos serviços de autenticação, como o ADFS da Microsoft ou até para seguir o 
+O SAML é utilizado por mútiplos serviços de autenticação, como o ADFS da Microsoft ou até para servir como um idP e criar federações para troca de dados de autorização e autenticação. 
+
+O primeiro passo para a utilização da funcionalidade é a criação de um provedor no IAM e configurações de roles e permissões específicas, depois torna-se necessária somente o carregamento da feature no Cognito e desenvolvimento da feature para a sua plataforma de preferência.  
+
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/Screen%20Shot%202016-06-29%20at%209.16.29%20AM.png?dl=0"Cognito - SAML"></p>
 
 Para mais informações sobre a utilização do SAML pelo Cognito verifique a [documentação](http://docs.aws.amazon.com/cognito/latest/developerguide/saml-identity-provider.html) ou no [blog da AWS](https://mobile.awsblog.com/post/Tx28TCWLHIRK4GT/Announcing-SAML-Support-for-Amazon-Cognito).
+
+Nas documentações, diversos templates são dados para carregamento do perfil em diversas SDKs. Mas agora com o suporte habilitado, múltiplas opções surgem no horizonte no ponto de vista de federação de identidades.
+
+[Getting Started Guide for Android](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html)
+[Getting Started Guide for iOS](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html)
+[API reference](http://aws.amazon.com/documentation/cognito/)
+
 
 
 
