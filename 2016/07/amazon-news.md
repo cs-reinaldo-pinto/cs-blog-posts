@@ -43,12 +43,9 @@ Para mais informações sobre a utilização do SAML pelo Cognito verifique a [d
 
 Nas documentações, diversos templates são dados para carregamento do perfil em diversas SDKs. Mas agora com o suporte habilitado, múltiplas opções surgem no horizonte no ponto de vista de federação de identidades.
 
-[Getting Started Guide for Android](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html)
-[Getting Started Guide for iOS](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html)
-[API reference](http://aws.amazon.com/documentation/cognito/)
-
-
-
+ - [Getting Started Guide for Android](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html)
+ - [Getting Started Guide for iOS](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html)
+ - [API reference](http://aws.amazon.com/documentation/cognito/)  
 
 
 
