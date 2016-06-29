@@ -28,5 +28,6 @@ Agora quando estiver na visualização de um usuário, grupo ou role, você tem 
 
 --- 
   
-
 ### Amazon Cognito e SAML
+
+Como geralmente citamos, por último, mas não menos importante
