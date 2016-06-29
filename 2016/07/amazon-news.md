@@ -31,8 +31,14 @@ Agora quando estiver na visualização de um usuário, grupo ou role, você tem 
 ### Amazon Cognito e SAML
 
 Como geralmente dizemos...
-Por último, mas não menos importante. Temos aqui a estrela do nosso post (sim, podem me julgar por ter guardado para o final!). Agora o Cognito dá suporte a provedores de identificação que usam Security Assertion Markup Language (SAML). O SAML é um padrão aberto baseado em XML e que permite a troca de informação de autenticação e agora passa a ser suportado diretamente pelo o Cognito, não sendo mais necessárias adaptações tecnológicas usando Secure Token Service (STS) do IAM.
-SA
+Por último, mas não menos importante. Temos aqui a estrela do nosso post (sim, podem me julgar por ter guardado para o final!). Agora o Cognito dá suporte a provedores de identificação que usam Security Assertion Markup Language (SAML). O SAML é um padrão aberto baseado em XML e que permite a troca de informação de autenticação e agora passa a ser suportado diretamente pelo Amazon Cognito, não sendo mais necessárias "adaptações tecnológicas" usando Secure Token Service (STS) do IAM.
+
+O SAML é utilizado por mútiplos serviços de autenticação, como o ADFS da Microsoft ou até para seguir o 
+
+Para mais informações sobre a utilização do SAML pelo Cognito verifique a [documentação](http://docs.aws.amazon.com/cognito/latest/developerguide/saml-identity-provider.html) ou no [blog da AWS](https://mobile.awsblog.com/post/Tx28TCWLHIRK4GT/Announcing-SAML-Support-for-Amazon-Cognito).
+
+
+
 
 
 Ficou alguma dúvida ou tem alguma contribuição? Aproveite os campos abaixo! E se você quer saber um pouco mais sobre os nossos serviços em AWS, [entre em contato com o nosso comercial](http://conteudo.concretesolutions.com.br/concrete-solutions-contato).
