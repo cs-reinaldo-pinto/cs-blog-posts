@@ -1,11 +1,14 @@
-# Amazon News – Passando a metade do ano, mas a inovação não para
+# Amazon News – Pacotão de Junho
 
-Como de costume a Amazon não brinca em serviço e constantemente está lançando novas funcionalidades, ou melhorando aquelas que já existem. Neste mês de Junho, diversas melhorias em serviços e no alcance de serviços foram apresentadas. Esse post visa cobrir um pouco do que foi mostrado pela companhia neste mês, como o suporte do _Amazon OpsWorks_ para trabalhar com o CentOS, a disponibilização do serviço de *Last Accessed Data* do Amazon IAM para a região *South America* e o fantástico anúncio de suporte do Amazon Cognito a SAML providers.
+Passamos para o segundo semestre de 2016 e a Amazon continua a todo "vapor", anunciando novas funcionalidades ou melhoramentos naquelas que já existem. Neste mês de Junho, diversas melhorias nos seus serviços foram apresentadas e esse post visa cobrir os principais pontos mostrados pela companhia no mês passado, como o suporte do _Amazon OpsWorks_ para trabalhar com o CentOS, a disponibilização do serviço de *Last Accessed Data* do Amazon IAM para a região *South America* (Sao Paulo), o anúncio do não sei o que de SNS e anúncio de suporte do Amazon Cognito a SAML providers.
   
 
 ### OpsWorks e Centos
 
-Agora o OpsWorks passa a dar suporte a instâncias e até mesmo servidores fora da sua stack (on-premises) rodando Centos 7, o suporte inicial prevê somente a versão 7 do sistema operacional amigo do SysAdmin e possíveis atualizações nos próximos anos, a versão do Chef suportada neste caso é somente a versão 12, então vamos tomar um pouco de cuidado com a versão utilizada atualmente em sua stack.
+Agora o OpsWorks passa a dar suporte a instâncias e até mesmo servidores fora da sua stack (on-premises) rodando CentOS, o que isso significa na prática é que uma **GRANDE** parcela do mercado (no mercado de WebServers usando Linux, por exemplo, [CentOS representa mais de 20%](http://pedro.com)),  que utiliza a distribuição para seus servidores será beneficiada pelo anúncio.
+
+
+ o suporte inicial prevê somente a versão 7 do sistema operacional amigo do SysAdmin e possíveis atualizações nos próximos anos, a versão do Chef suportada neste caso é somente a versão 12, então vamos tomar um pouco de cuidado com a versão utilizada atualmente em sua stack.
 
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/6mcg73ayvawnayb/Screen%20Shot%202016-06-28%20at%2010.15.41%20PM.png?dl=0"OpsWorks - Centos"></p>
 
