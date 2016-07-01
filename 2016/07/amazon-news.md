@@ -37,11 +37,10 @@ Agora quando estiver na visualização de um usuário, grupo ou role, uma nova a
 Como geralmente dizemos...
 Por último, mas não menos importante. Temos aqui a estrela do nosso post (sim, podem me julgar por ter guardado para o final!). Agora o Amazon Cognito dá suporte a provedores de identificação que usam Security Assertion Markup Language (SAML). O SAML é um padrão aberto baseado em XML e que permite a troca de informação de autorização e autenticação. O mesmo é usado por múltiplos serviços de autenticação como o ADFS da Microsoft ou então como padrão por muitos SaaS como [Google](https://developers.google.com/google-apps/sso/saml_reference_implementation), [SAP](https://wiki.scn.sap.com/wiki/display/Security/Single+Sign-On+with+SAML+2.0) e [Salesforce](https://developer.salesforce.com/page/How_to_Implement_Single_Sign-On_with_Force.com).
 
- agora passa a ser suportado diretamente pelo Amazon Cognito, não sendo mais necessárias "adaptações tecnológicas" usando Secure Token Service (STS) do IAM. O SAML é utilizado por mútiplos serviços de autenticação, como o ADFS da Microsoft ou até mesmo como um idP e criar federações para troca de dados de autorização e autenticação. 
+Agora que o SAML passa a ser suportado diretamente pelo Amazon Cognito, não sendo mais necessárias "adaptações tecnológicas" usando Secure Token Service (STS) do IAM, o desenvolvimento de aplicações corporativas que se autenticam por meio de domínios fica mais facilitado. Já pensou no seu aplicativo de lançamento de horas autenticando diretamente no AD da Microsoft? 
 
 
-
-O primeiro passo para a utilização da funcionalidade é a criação de um provedor no IAM e configurações de roles e permissões específicas, depois torna-se necessária somente o carregamento da feature no Cognito e desenvolvimento da feature para a sua plataforma de preferência.  
+Na criação de um provedor no IAM e configurações de roles e permissões específicas, já é possível verificar a nova aba, conforme imagem abaixo. Depois da configuração do provedor, tornam-se necessários, o carregamento da feature no Cognito e desenvolvimento da feature para a sua plataforma de preferência.  
 
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/g5qcq5pkobdrj62/Screen%20Shot%202016-06-29%20at%209.16.29%20AM.png?dl=0"Cognito - SAML"></p>
 
