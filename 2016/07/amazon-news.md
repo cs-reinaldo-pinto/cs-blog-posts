@@ -1,9 +1,9 @@
 # Amazon News – Pacotão de Junho
 
-Passamos para o segundo semestre de 2016 e a Amazon continua a todo "vapor", anunciando novas funcionalidades ou melhoramentos naquelas que já existem. Neste mês de Junho, diversas melhorias nos seus serviços foram apresentadas e esse post visa cobrir os principais pontos mostrados pela companhia no mês passado, como o suporte do _Amazon OpsWorks_ para trabalhar com o CentOS, a disponibilização do serviço de *Last Accessed Data* do Amazon IAM para a região *South America* (Sao Paulo), o anúncio do não sei o que de SNS e anúncio de suporte do Amazon Cognito a SAML providers.
+Passamos para o segundo semestre de 2016 e a Amazon continua a todo "vapor", anunciando novas funcionalidades ou melhora no alcance das que já existem. Neste mês de Junho, diversas melhorias nos seus serviços foram apresentadas e esse post visa cobrir os principais pontos mostrados pela companhia no mês passado, como o suporte do _Amazon OpsWorks_ para trabalhar com o CentOS, a disponibilização do serviço de *Last Accessed Data* do Amazon IAM para a região *South America* (Sao Paulo) e anúncio de suporte do Amazon Cognito a SAML providers.
   
 
-### OpsWorks e Centos
+### OpsWorks e CentOS
 
 Agora o OpsWorks passa a dar suporte a instâncias e até mesmo servidores fora da sua stack (on-premises) rodando CentOS, o que isso significa na prática é que uma **GRANDE** parcela do mercado (só no mercado de WebServers usando Linux, por exemplo, [CentOS representa mais de 20%](https://w3techs.com/technologies/details/os-linux/all/all)), e quem utiliza a distribuição para seus servidores será beneficiada pelo anúncio.
 
@@ -22,9 +22,9 @@ Para mais informações sobre o suporte a Centos e possíveis atualizações, ve
 
 Na verdade a Amazon anúnciou na semana passada o suporte da função para duas novas regiões, *South America* (São Paulo) e *Asia Pacific* (Seul) além das oito já suportadas, o mesmo já era esperado, desde que a compania informou o início do rastreio das informações de acesso no final de 2015 e início de 2016. 
 
-O serviço de [__Last Accessed Data__](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html?icmpid=docs_iam_console) permite obter informações sobre as tentativas de acessos de usuários e roles do IAM aos serviços da AWS. Informações como usuários, grupos e roles acessando recursos são de extrema importãncia para permitir um aprimoramento nas *policies* do seu IAM e manter as boas práticas indicadas pela Amazon baseadas em [menor privilégio](http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege).
+O serviço de [__Last Accessed Data__](http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html?icmpid=docs_iam_console) permite obter informações sobre as tentativas de acessos de usuários e roles do IAM aos serviços da AWS. Na prática, informações como usuários, grupos e roles tentando acessar recursos, permitem o aprimoramento nas *policies* do seu IAM e manter as boas práticas indicadas pela Amazon baseadas em [menor privilégio](http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege).
 
-Agora quando estiver na visualização de um usuário, grupo ou role, você tem a opção de uma nova aba chamada __Access Advisor__ onde são apresentadas todas as tentativas de acesso daquela entidade aos recursos da AWS, indepententemente da forma de conexão, dendo elas provenientes de acesso via console ou chamadas de API. 
+Agora quando estiver na visualização de um usuário, grupo ou role, uma nova aba chamada __Access Advisor__ é apresentada á direita, onde são expostas todas tentativas de acesso daquela entidade aos recursos da AWS, indepententemente da forma de acesso, sendo elas provenientes de acesso via console ou chamadas de API. 
 
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/s4otsk5ybalpfg6/Policy-centric-image-1ab.png?dl=0"IAM - Last Accessed Data"></p>
 
@@ -35,9 +35,11 @@ Agora quando estiver na visualização de um usuário, grupo ou role, você tem 
 ### Amazon Cognito e SAML
 
 Como geralmente dizemos...
-Por último, mas não menos importante. Temos aqui a estrela do nosso post (sim, podem me julgar por ter guardado para o final!). Agora o Cognito dá suporte a provedores de identificação que usam Security Assertion Markup Language (SAML). O SAML é um padrão aberto baseado em XML e que permite a troca de informação de autenticação e agora passa a ser suportado diretamente pelo Amazon Cognito, não sendo mais necessárias "adaptações tecnológicas" usando Secure Token Service (STS) do IAM.
+Por último, mas não menos importante. Temos aqui a estrela do nosso post (sim, podem me julgar por ter guardado para o final!). Agora o Amazon Cognito dá suporte a provedores de identificação que usam Security Assertion Markup Language (SAML). O SAML é um padrão aberto baseado em XML e que permite a troca de informação de autorização e autenticação. O mesmo é usado por múltiplos serviços de autenticação como o ADFS da Microsoft ou então como padrão por muitos SaaS como [Google](https://developers.google.com/google-apps/sso/saml_reference_implementation), [SAP](https://wiki.scn.sap.com/wiki/display/Security/Single+Sign-On+with+SAML+2.0) e [Salesforce](https://developer.salesforce.com/page/How_to_Implement_Single_Sign-On_with_Force.com).
 
-O SAML é utilizado por mútiplos serviços de autenticação, como o ADFS da Microsoft ou até para servir como um idP e criar federações para troca de dados de autorização e autenticação. 
+ agora passa a ser suportado diretamente pelo Amazon Cognito, não sendo mais necessárias "adaptações tecnológicas" usando Secure Token Service (STS) do IAM. O SAML é utilizado por mútiplos serviços de autenticação, como o ADFS da Microsoft ou até mesmo como um idP e criar federações para troca de dados de autorização e autenticação. 
+
+
 
 O primeiro passo para a utilização da funcionalidade é a criação de um provedor no IAM e configurações de roles e permissões específicas, depois torna-se necessária somente o carregamento da feature no Cognito e desenvolvimento da feature para a sua plataforma de preferência.  
 
@@ -50,7 +52,6 @@ Nas documentações, diversos templates são dados para carregamento do perfil e
  - [Getting Started Guide for Android](https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html)
  - [Getting Started Guide for iOS](https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html)
  - [API reference](http://aws.amazon.com/documentation/cognito/)  
-
 
 
 Ficou alguma dúvida ou tem alguma contribuição? Aproveite os campos abaixo! E se você quer saber um pouco mais sobre os nossos serviços em AWS, [entre em contato com o nosso comercial](http://conteudo.concretesolutions.com.br/concrete-solutions-contato).
