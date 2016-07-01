@@ -39,7 +39,6 @@ Por último, mas não menos importante. Temos aqui a estrela do nosso post (sim,
 
 Agora que o SAML passa a ser suportado diretamente pelo Amazon Cognito, não sendo mais necessárias "adaptações tecnológicas" usando Secure Token Service (STS) do IAM, o desenvolvimento de aplicações corporativas que se autenticam por meio de domínios fica mais facilitado. Já pensou no seu aplicativo de lançamento de horas autenticando diretamente no AD da Microsoft? 
 
-
 Na criação de um provedor no IAM e configurações de roles e permissões específicas, já é possível verificar a nova aba, conforme imagem abaixo. Depois da configuração do provedor, tornam-se necessários, o carregamento da feature no Cognito e desenvolvimento da feature para a sua plataforma de preferência.  
 
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/g5qcq5pkobdrj62/Screen%20Shot%202016-06-29%20at%209.16.29%20AM.png?dl=0"Cognito - SAML"></p>
