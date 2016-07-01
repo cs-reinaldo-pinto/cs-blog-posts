@@ -5,10 +5,11 @@ Passamos para o segundo semestre de 2016 e a Amazon continua a todo "vapor", anu
 
 ### OpsWorks e Centos
 
-Agora o OpsWorks passa a dar suporte a instâncias e até mesmo servidores fora da sua stack (on-premises) rodando CentOS, o que isso significa na prática é que uma **GRANDE** parcela do mercado (no mercado de WebServers usando Linux, por exemplo, [CentOS representa mais de 20%](http://pedro.com)),  que utiliza a distribuição para seus servidores será beneficiada pelo anúncio.
+Agora o OpsWorks passa a dar suporte a instâncias e até mesmo servidores fora da sua stack (on-premises) rodando CentOS, o que isso significa na prática é que uma **GRANDE** parcela do mercado (só no mercado de WebServers usando Linux, por exemplo, [CentOS representa mais de 20%](https://w3techs.com/technologies/details/os-linux/all/all)), e quem utiliza a distribuição para seus servidores será beneficiada pelo anúncio.
 
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/iyit6uo2dxvkqnv/Screen%20Shot%202016-07-01%20at%208.11.42%20AM.png?dl=0"Market Share - CentOS"></p>
 
- o suporte inicial prevê somente a versão 7 do sistema operacional amigo do SysAdmin e possíveis atualizações nos próximos anos, a versão do Chef suportada neste caso é somente a versão 12, então vamos tomar um pouco de cuidado com a versão utilizada atualmente em sua stack.
+O suporte inicial prevê somente a versão 7 do sistema operacional amigo do SysAdmin e possíveis atualizações nos próximos anos, são prevista de dois em dois anos. A versão do Chef suportada neste caso é somente a versão 12, então vamos tomar um pouco de cuidado com a versão utilizada atualmente em sua stack.
 
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/6mcg73ayvawnayb/Screen%20Shot%202016-06-28%20at%2010.15.41%20PM.png?dl=0"OpsWorks - Centos"></p>
 
