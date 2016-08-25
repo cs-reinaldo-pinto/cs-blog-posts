@@ -68,4 +68,3 @@ ChatOps talvez não seja realmente para todos os ambientes, mas quanto mais dest
 **USE CHATOPS E SEJA MAIS ÁGIL!!**
 
 Ficou alguma dúvida ou tem algum comentário a fazer? Aproveite os campos abaixo. Quer trabalhar com DevOps em uma empresa verdadeiramente ágil? Acesse aqui. Até a próxima!
-
