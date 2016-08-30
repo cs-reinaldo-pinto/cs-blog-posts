@@ -1,5 +1,6 @@
 # Infraestrutura como código
 
+
 Uma das práticas recorrentes na minha vida é a análise da forma como eu faço as coisas atualmente e como eu cheguei lá. Sendo eu um SysAdmin por paixão, esses dias parei para analisar as ferramentas que utilizo atualmente no meu dia a dia de trabalho, a forma como eu as utilizo e também nas inúmeras opções que tenho para substituir essas ferramentas assim que eu quiser por outras com basicamente a mesma funcionalidade.
 
 Lembrei dos tempos áureos onde eu ia ao CPD colocava a máquina no rack, ajustava o cabeamento de rede e energia, colocava aquele CD do SO da empresa (aquela imagem toda modificada, que provavelmente ia quebrar na instalação por firmware diferente). Depois de toda a instalação feita e de um tempo razoável de trabalho, sentava na minha mesa e começava a configurar as coisas com meu script maroto baseado no comando abaixo:
