@@ -16,7 +16,12 @@ Se ainda pensarmos em questões como portabilidade, reproducibilidade e até mes
 Iniciei alguns projetos no passado que tinham a necessidade de serem deployados em containers, a aplicação já estava toda embarcada em imagens Docker (exatamente o que os desenvolvedores rodavam localmente) e precisávamos somente shippar nossos containers para os nossos diferentes ambientes. Mas daí vinha uma decisão difícil a ser tomada, qual ferramenta utilizar para colocar nossos containers para rodar. Só na AWS temos três ferramentas diferentes para deployar nossos containers, são elas: usando instâncias EC2 configuradas como Docker Hosts, o Elastic Beanstalk que serve para deployar diversas plataformas de serviço e por último mas não menos importante ECS que é o serviço especializado da Amazon para rodar containers.
 
 ### EC2 - Docker Host
-O Docker como plataforma para execução de aplicações é uma ferramenta realmente incrível, tudo que precisamos é de um sistema com kernel Linux e voilá. Algumas poucas abstrações em cima e temos um "Sistema Operacional inteiro", stacks e suas dependências resolvidas para suportar a aplicação que tanto desejamos ver rodando. Levando em consideração que só precisamos de um SO preparado podemos sim levar em consideração a utilização sistema rodando Linuxusaria dizer que a forma mais primitiva e menos suscetível a falhas é instalar a 
+O Docker como plataforma para execução de aplicações é uma ferramenta realmente incrível, tudo que precisamos é de um sistema com kernel Linux e voilá. Algumas poucas abstrações em cima e temos um "Sistema Operacional inteiro", stacks e suas dependências resolvidas para suportar a aplicação que tanto desejamos ver rodando. Levando em consideração que só precisamos de um SO preparado, podemos sim adotar a utilização de uma VM (ou instância EC2) rodando o Docker Engine para realizarmos nossos deploys. Ousaria inclusive, em dizer que é uma forma um pouco mais simples de usar tudo o que a ferramenta tem para dar, mas ao mesmo tempo muito poderosa pois temos mais acessos e a chance de customizar mais conforme precisamos, e isso é importantíssimo as vezes.
+
+#### E a automação?
+Daí vem a pergunta, é possível automatizar as coisas desse jeito? E a resposta categórica é SIM, muito. Com o sistema aberto assim temos várias formas de automação, desde a máquina em que o Docker Engine é instalado até a forma como nos conectamos até a esta Engine para fazer subir o container com a nossa aplicação.
+
+Várias são as abordagens que podemos utilizar quanto a instalação do Docker e as configurações que podemos fazer para disponibilizá-lo, se você quiser um guia para a instalação do Docker em uma máquina Linux você pode encontrar [aqui](LINK DOCKER)
 
 
 ### Elastic Beanstalk - Deploy Docker
