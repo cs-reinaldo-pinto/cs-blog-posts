@@ -19,9 +19,49 @@ Iniciei alguns projetos no passado que tinham a necessidade de serem deployados 
 O Docker como plataforma para execução de aplicações é uma ferramenta realmente incrível, tudo que precisamos é de um sistema com kernel Linux e voilá. Algumas poucas abstrações em cima e temos um "Sistema Operacional inteiro", stacks e suas dependências resolvidas para suportar a aplicação que tanto desejamos ver rodando. Levando em consideração que só precisamos de um SO preparado, podemos sim adotar a utilização de uma VM (ou instância EC2) rodando o Docker Engine para realizarmos nossos deploys. Ousaria inclusive, em dizer que é uma forma um pouco mais simples de usar tudo o que a ferramenta tem para dar, mas ao mesmo tempo muito poderosa pois temos mais acessos e a chance de customizar mais conforme precisamos, e isso é importantíssimo as vezes.
 
 #### E a automação?
-Daí vem a pergunta, é possível automatizar as coisas desse jeito? E a resposta categórica é SIM, muito. Com o sistema aberto assim temos várias formas de automação, desde a máquina em que o Docker Engine é instalado até a forma como nos conectamos até a esta Engine para fazer subir o container com a nossa aplicação.
+Daí vem a pergunta, é possível automatizar as coisas desse jeito? E a resposta categórica é SIM, muito. Com o sistema aberto assim temos várias formas de automação, desde a máquina em que o Docker Engine é instalado até a forma como nos conectamos até a esta engine para fazer subir o container com a nossa aplicação.
 
-Várias são as abordagens que podemos utilizar quanto a instalação do Docker e as configurações que podemos fazer para disponibilizá-lo, se você quiser um guia para a instalação do Docker em uma máquina Linux você pode encontrar [aqui](LINK DOCKER)
+Várias são as abordagens que podemos utilizar quanto a instalação do Docker e as configurações que podemos fazer para disponibilizá-lo. A ideia aqui não é apresentar um guia para instalação do Docker simplesmente, se você precisa fazer a instalação do Docker em uma máquina Linux você pode seguir esse tutorial [aqui](LINK DOCKER) da própria Docker que é bem explicativo. Eu particularmente gosto de gerenciar todas as configurações necessárias a partir de uma ferramenta como Puppet ou Ansible, mas também é possível que você faça todas as configurações em uma AMI customizada e ajuste as configs via **user data**. De novo, são várias as abordagens possíveis.
+
+Mas como nós da Concrete gostamos de processos cada vez mais automatizados, abaixo segue um trecho de um playbook Ansible para criar uma nova instância EC2 e instalar o Docker e suas dependências para que possamos adotar nos nossos processos automatizados de provisionamento.
+
+```yaml
+---
+
+- name: Cria instância EC2 com CentOS e Docker
+hosts: localhost
+connection: local
+gather_facts: false
+tasks:
+
+- name: Cria EC2 Docker Host
+ec2:
+region: <REGION>
+key_name: <MY_KEY>
+instance_type: <INSTANCE_TYPE>
+image: ami-fd0197e0
+register: ec2
+
+- name: Instala e configura o Docker
+hosts: <INSTANCE_NAME>
+remote_user: centos
+sudo: yes
+tasks:
+- name: Cria arquivo do repo com base em arquivo local
+copy: src=./docker.repo dest=/etc/yum.repos.d/docker.repo mode=0644
+
+- name: Instala docker-engine via Yum
+yum: name=docker-engine state=present
+
+- name: Disabilita o SELinux
+selinux: state=disabled
+
+- name: Inicializa e Habilita o Docker na inicialização
+service: name=docker state=started enabled=yes
+
+```
+
+
 
 
 ### Elastic Beanstalk - Deploy Docker
