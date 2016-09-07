@@ -75,12 +75,13 @@ Como dito anteriormente, essa é com certeza a que permite o maior número de cu
 O céu é o limite nessa abordagem pessoal.
 
 ### Elastic Beanstalk - Deploy Docker
-A segunda abordagem possível, é de utilizarmos o serviço de PaaS da AWS, o Elastic Beanstalk. A grande facilidade por trás de um PaaS é permitir o upload de seu código "as is" e ele guardar todos os requisitos por trás da plataforma de deploy.
+A segunda abordagem possível, é de utilizarmos o serviço de PaaS da AWS, o Elastic Beanstalk. A grande facilidade por trás de um PaaS é permitir o upload de seu código "as is" e ele resolver todos aqueles requisitos necessários pela plataforma onde o deploy acontecerá.
 
-O Beanstalk permite o deploy de diversos tipos de plataformas, como aplicações rodando em Java com Tomcat, NodeJS, PHP, Python, Ruby e é claro containers Docker \o/.
+O Beanstalk permite o deploy em diversas plataformas, como aplicações rodando Java em Tomcat, NodeJS, PHP, Python, Ruby e é claro containers Docker \o/.
 
-<p align="center"><img src="https://dl.dropboxusercontent.com/s/d0mld4njpw70bmw/Screen%20Shot%202016-06-08%20at%207.13.36%20PM.png?dl=0"Beanstalk Hubot"></p>
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/6mcg73ayvawnayb/Screen%20Shot%202016-06-28%20at%2010.15.41%20PM.png?dl=0"Beanstalk Hubot"></p>
 
+No caso do deploy de containers Docker, temos a opção de realizar deploy de um container único ou ainda múltiplos containers no caso de uma stack de aplicações que desejamos colocar em execução em conjunto. Tudo que precisamos é criar um zip da nossa aplicação (incluindo Dockerfile e um Dockerrun.aws.json).
 
 
 ### ECS - Tasks configuradas
