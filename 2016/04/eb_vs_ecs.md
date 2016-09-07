@@ -64,11 +64,11 @@ service: name=docker state=started enabled=yes
 Outro aspecto interessante sobre o deploy de containers em ambientes onde temos acesso a engine do Docker é a chance de nos conectarmos remotamente a ela e iniciar a execução de containers, por exemplo. Diretamente do client para o host ou via chamada de API:
 
 ```shell
-docker -H tcp://192.168.2.100:5678 run -d pedrocesarti/node-project-sample
+$ docker -H tcp://192.168.2.100:5678 run -d pedrocesarti/node-project-sample
 ```
 ou
 ```shell
-curl -XPOST http://192.168.2.100:5678/images/create?fromImage=pedrocesarti/node-project-sample
+$ curl -XPOST http://192.168.2.100:5678/images/create?fromImage=pedrocesarti/node-project-sample
 ```
 
 Como dito anteriormente, essa é com certeza a que permite o maior número de customizações, se você não quiser fazer deploy via client diretamente, você pode ainda usar a API da engine e configurar a sua aplicação para realizar todas as operações via API REST (conforme mostrado acima também) ou ainda cadastrar todos os seus docker hosts em um docker-machine e disparar comandos em inúmeros dockers ao mesmo tempo. 
@@ -109,9 +109,10 @@ Uma grande aliada que temos neste caso, são as ferramentas da AWS como e EB CLI
 
 O comando eb init vai permitir a criação de uma nova aplicação ou então a utilização de um ambiente existente.
 
-pc:node-project-sample pc$ eb init
 
 ```shell
+$ eb init
+
 Select a default region
 1) us-east-1 : US East (N. Virginia)
 2) us-west-1 : US West (N. California)
@@ -129,7 +130,8 @@ Select an application to use
 Já o comando eb deploy se encarregará de realizar o update de toda aplicação, no nosso caso o upload do arquivo Dockerrun.aws.json para o S3 e deploy.
 
 ```shell
-pc:node-project-sample pc$ eb deploy
+$ eb deploy
+
 Creating application version archive "app-160907_130749".
 Uploading My First Elastic Beanstalk Application/app-160907_130749.zip to S3. This may take a while.
 Upload Complete.
@@ -159,7 +161,7 @@ Mais uma vez vamos falar de automação e relacionar as ferramentas da Amazon pa
 Recomendo muito a utilização do Registry interno do seu ECS, mas para o objetivo deste post vamos usar a imagem que eu já venho usando até aqui e está disponível no [DockerHub](https://hub.docker.com/r/pedrocesarti/node-project-sample/).
 
 ```shell
-aws ecs create-cluster --cluster NodeProjectSample
+$ aws ecs create-cluster --cluster NodeProjectSample
 ```
 Conforme comentado anteriormente, algumas opções podem ser utilizadas para garantir a adição de instâncias a este cluster, mas lembre de usar uma imagem já preparada para rodar o agente do ECS e de adicionar algo semelhante ao script abaixo no user-data.
 
@@ -172,7 +174,7 @@ Depois de adicionar pelo menos uma instância nosso cluster estará pronto para 
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/krre1spe757zf3m/Screen%20Shot%202016-09-07%20at%206.02.49%20PM.png?dl=0"ECS Cluster"></p>
 
 ```shell
-pc:node-project-sample pc$ aws ecs list-container-instances --cluster NodeProjectSample --profile pedrocesar
+$ aws ecs list-container-instances --cluster NodeProjectSample
 {
   "containerInstanceArns": [
      "arn:aws:ecs:us-east-1:757391140512:container-instance/a9c3b63f-5014-4815-ad94-51f6446b4d96"
