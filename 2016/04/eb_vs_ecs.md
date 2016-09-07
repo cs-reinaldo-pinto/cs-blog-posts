@@ -79,11 +79,11 @@ A segunda abordagem possível, é de utilizarmos o serviço de PaaS da AWS, o El
 
 O Beanstalk permite o deploy em diversas plataformas, como aplicações rodando Java em Tomcat, NodeJS, PHP, Python, Ruby e é claro containers Docker \o/.
 
-<p align="center"><img src="https://dl.dropboxusercontent.com/s/g9ij8rj0vztc4jy/Screen%20Shot%202016-09-07%20at%2011.49.31%20AM.png?dl=0"Beanstalk Hubot"></p>
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/g9ij8rj0vztc4jy/Screen%20Shot%202016-09-07%20at%2011.49.31%20AM.png?dl=0"Beanstalk Docker"></p>
 
 No caso do deploy de containers Docker, temos a opção de realizar deploy de um container único ou ainda múltiplos containers no caso de uma stack de aplicações que desejamos colocar em execução em conjunto. Tudo que precisamos é criar um zip da nossa aplicação (incluindo Dockerfile e um Dockerrun.aws.json). 
 
-Se já tivermos a imagem da nossa aplicação embarcada em uma imagem Docker em algum Registry, podemos só atualizar o nosso arquivo Dockerrun.aws.json.
+Se já tivermos a nossa aplicação embarcada em uma imagem Docker em algum Registry, podemos só atualizar o nosso arquivo Dockerrun.aws.json realizando o upload do arquivo atualizado e a aplicação é atualizada pelo PaaS e em alguns momentos é disponibilizada para acesso.
 
 ```json
 {
@@ -100,5 +100,11 @@ Se já tivermos a imagem da nossa aplicação embarcada em uma imagem Docker em 
         "Logging": "/var/log/nginx"
 }
 ```
+
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/l4nqyl8fq9ifbxj/Screen%20Shot%202016-09-07%20at%2012.18.31%20PM.png?dl=0"Beanstalk Update"></p>
+
+#### E a automação?
+
+
 
 ### ECS - Tasks configuradas
