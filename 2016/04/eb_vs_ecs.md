@@ -159,9 +159,25 @@ Mais uma vez vamos falar de automação e relacionar as ferramentas da Amazon pa
 Recomendo muito a utilização do Registry interno do seu ECS, mas para o objetivo deste post vamos usar a imagem que eu já venho usando até aqui e está disponível no [DockerHub](https://hub.docker.com/r/pedrocesarti/node-project-sample/).
 
 ```shell
-aws ecs create-cluster --cluster NodeProjectSample --profile pedrocesar
+aws ecs create-cluster --cluster NodeProjectSample
 ```
-Os clusters iniciados no ECS podem ser utilizados com duas finalidades, a execução de tasks ou de serviços, sendo a principal diferença a definição da vida útil da sua aplicação. No caso das tasks a ideia é que o container suba realize sua task e morra. Já no caso dos services a ideia é manter os containers rodando e respondendo pelo máximo tempo possível.
+Conforme comentado anteriormente, algumas opções podem ser utilizadas para garantir a adição de instâncias a este cluster, mas lembre de usar uma imagem já preparada para rodar o agente do ECS e de adicionar algo semelhante ao script abaixo no user-data.
+
+```shell
+#!/bin/bash
+echo ECS_CLUSTER=NodeProjectSample >> /etc/ecs/ecs.config
+```
+Depois de adicionar pelo menos uma instância nosso cluster estará pronto para iniciar o trabalho.
+
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/krre1spe757zf3m/Screen%20Shot%202016-09-07%20at%206.02.49%20PM.png?dl=0"ECS Cluster"></p>
+
+Os clusters iniciados no ECS podem ser utilizados com duas finalidades, a execução de tasks ou de serviços, sendo a principal diferença a definição da vida útil da sua aplicação. No caso das tasks a ideia é que o container suba realize sua task e morra. Já no caso dos services a ideia é manter os containers rodando e respondendo pelo máximo tempo possível. 
+
+Como grande parte do nosso trabalho é manter aplicações rodando long term, vamos dar mais foco a essa segunda abordagem. Mas se você deseja mais informações sobre definições de tasks e execução das mesmas, você pode verificar [aqui](http://docs.aws.amazon.com/pt_br/AmazonECS/latest/developerguide/task_definition_parameters.html) a melhor maneira de implementar elas.
+
+
+
+
 
 
 
