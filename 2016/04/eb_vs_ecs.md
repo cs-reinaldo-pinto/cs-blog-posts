@@ -61,7 +61,7 @@ service: name=docker state=started enabled=yes
 
 ```
 
-Outro aspecto interessante sobre o deploy de containers em ambientes onde temos acesso a engine do Docker é a chance de nos conectarmos remotamente a ela e iniciar a execução de containers, por exemplo. Diretamente do client para o host:
+Outro aspecto interessante sobre o deploy de containers em ambientes onde temos acesso a engine do Docker é a chance de nos conectarmos remotamente a ela e iniciar a execução de containers, por exemplo. Diretamente do client para o host ou via chamada de API:
 
 ```shell
 docker -H tcp://192.168.2.100:5678 run -d pedrocesarti/node-project-sample
@@ -70,9 +70,8 @@ ou
 ```shell
 curl -XPOST http://192.168.2.100:5678/images/create?fromImage=pedrocesarti/node-project-sample
 ```
-Como dito anteriormente, essa é com certeza a que permite o maior número de customizações, se você não quiser fazer deploy via client diretamente, você pode ainda usar a API da engine e configurar a sua aplicação para realizar todas as operações via API REST (conforme mostrado acima também) ou ainda cadastrar todos os seus docker hosts em um docker-machine e disparar comandos em inúmeros dockers ao mesmo tempo. 
 
-O céu é o limite nessa abordagem pessoal.
+Como dito anteriormente, essa é com certeza a que permite o maior número de customizações, se você não quiser fazer deploy via client diretamente, você pode ainda usar a API da engine e configurar a sua aplicação para realizar todas as operações via API REST (conforme mostrado acima também) ou ainda cadastrar todos os seus docker hosts em um docker-machine e disparar comandos em inúmeros dockers ao mesmo tempo. 
 
 ### Elastic Beanstalk - Deploy Docker
 A segunda abordagem possível, é de utilizarmos o serviço de PaaS da AWS, o Elastic Beanstalk. A grande facilidade por trás de um PaaS é permitir o upload de seu código "as is" e ele resolver todos aqueles requisitos necessários pela plataforma onde o deploy acontecerá.
@@ -104,7 +103,55 @@ Se já tivermos a nossa aplicação embarcada em uma imagem Docker em algum Regi
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/l4nqyl8fq9ifbxj/Screen%20Shot%202016-09-07%20at%2012.18.31%20PM.png?dl=0"Beanstalk Update"></p>
 
 #### E a automação?
+Assim como no caso do Docker host, com o Beanstalk algumas automações também são possíveis. Lembrando que independente da abordagem utilizada (embarcando a aplicação em uma imagem ou fazendo um zip da aplicação inteira), você precisa realizar o upload da sua aplicação e simplesmente realizar um update do status da aplicação que está rodando atualmente.
+
+Uma grande aliada que temos neste caso, são as ferramentas da AWS como e EB CLI, tanto para administrar quando permitir diferentes níveis de automação. Abaixo segue alguns exemplos de comandos usados para criar uma aplicação e atualizar o código rodando nela para a nossa aplicação entrar em execução.
+
+O comando eb init vai permitir a criação de uma nova aplicação ou então a utilização de um ambiente existente.
+
+pc:node-project-sample pc$ eb init
+
+```shell
+Select a default region
+1) us-east-1 : US East (N. Virginia)
+2) us-west-1 : US West (N. California)
+3) us-west-2 : US West (Oregon)
+4) eu-west-1 : EU (Ireland)
+5) eu-central-1 : EU (Frankfurt)
+(default is 3): 1
 
 
+Select an application to use
+1) node-project-sample
+2) [ Create new Application ]
+(default is 2): 1
+```
+Já o comando eb deploy se encarregará de realizar o update de toda aplicação, no nosso caso o upload do arquivo Dockerrun.aws.json para o S3 e deploy.
+
+```shell
+pc:node-project-sample pc$ eb deploy
+Creating application version archive "app-160907_130749".
+Uploading My First Elastic Beanstalk Application/app-160907_130749.zip to S3. This may take a while.
+Upload Complete.
+INFO: Environment update is starting.
+INFO: Deploying new version to instance(s).
+INFO: Successfully pulled pedrocesarti/node-project-sample:latest
+INFO: Successfully built aws_beanstalk/staging-app
+INFO: Docker container 608cac2c6bae is running aws_beanstalk/current-app.
+INFO: Environment health has transitioned from Ok to Info. Application update in progress on 1 instance. 0 out of 1 instance completed (running for 23 seconds).
+INFO: New application version was deployed to running EC2 instances.
+```
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/33x5wv88yutn0dk/Screen%20Shot%202016-09-07%20at%201.14.14%20PM.png?dl=0"Beanstalk Update"></p>
+
+No caso da utilização do Elastic Beanstalk temos toda uma plataforma já pré-configurda e só aguardando o nosso código para ser deployado, para um ambiente de desenvolvimento, podemos utilizar os comandos do EB CLI junto com os comandos do GIT para que o desenvolvedor consiga facilmente testar seu código rapidamente. se ficou interessado, por favor ver [aqui](https://ruby.awsblog.com/post/Tx2AK2MFX0QHRIO/Deploying-Ruby-Applications-to-AWS-Elastic-Beanstalk-with-Git) o post com exemplos de deploy de uma aplicação Ruby.
+
+Lembrando que no background dessas operações, a AWS toma conta da necessidade de iniciar as instâncias EC2 que forem necessárias, além de tomar conta de outros recursos como load balancers e grupos de autoscaling.
 
 ### ECS - Tasks configuradas
+
+
+### Concluindo
+
+Como custumo dizer, a melhor ferramenta é aquela que atende melhor as suas necessidades e aqui essa é basicamente a ideia. Já tive que usar todas elas em diferentes casos mas não larguei da ideia de automatizar ao máximo e seguir o caminh mais simples para manter os nossos containers rodando.
+
+
