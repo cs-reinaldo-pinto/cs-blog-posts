@@ -171,6 +171,15 @@ Depois de adicionar pelo menos uma instância nosso cluster estará pronto para 
 
 <p align="center"><img src="https://dl.dropboxusercontent.com/s/krre1spe757zf3m/Screen%20Shot%202016-09-07%20at%206.02.49%20PM.png?dl=0"ECS Cluster"></p>
 
+```shell
+pc:node-project-sample pc$ aws ecs list-container-instances --cluster NodeProjectSample --profile pedrocesar
+{
+  "containerInstanceArns": [
+     "arn:aws:ecs:us-east-1:757391140512:container-instance/a9c3b63f-5014-4815-ad94-51f6446b4d96"
+  ]
+}
+```
+
 Os clusters iniciados no ECS podem ser utilizados com duas finalidades, a execução de tasks ou de serviços, sendo a principal diferença a definição da vida útil da sua aplicação. No caso das tasks a ideia é que o container suba realize sua task e morra. Já no caso dos services a ideia é manter os containers rodando e respondendo pelo máximo tempo possível. 
 
 Como grande parte do nosso trabalho é manter aplicações rodando long term, vamos dar mais foco a essa segunda abordagem. Mas se você deseja mais informações sobre definições de tasks e execução das mesmas, você pode verificar [aqui](http://docs.aws.amazon.com/pt_br/AmazonECS/latest/developerguide/task_definition_parameters.html) a melhor maneira de implementar elas.
