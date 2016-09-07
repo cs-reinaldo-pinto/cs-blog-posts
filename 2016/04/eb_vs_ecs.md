@@ -61,8 +61,11 @@ service: name=docker state=started enabled=yes
 
 ```
 
-
-
+Outro aspecto interessante sobre o deploy de containers em ambientes onde temos acesso a engine do Docker é a chance de nos conectarmos remotamente a ela e iniciar a execução de containers, por exemplo. Diretamente do client para o host:
+```shell
+docker -H tcp://192.168.2.100:5678 run -it debian_APP ./start_aplication.sh
+```
+Como dito anteriormente, essa é com certeza a que permite o maior número de customizações, se você não quiser fazer deploy via client, você pode ainda habilitar a API da engine e fazer todas as operações que você desejar via API REST ou ainda cadastrar todos os seus docker hosts em um docker-machine e disparar comandos em inúmeros dockers ao mesmo tempo. O céu é o limite pessoal.
 
 ### Elastic Beanstalk - Deploy Docker
 ### ECS - Tasks configuradas
