@@ -182,47 +182,58 @@ $ aws ecs list-container-instances --cluster NodeProjectSample
 }
 ```
 
-Basicamente os clusters iniciados no ECS podem iniciar containers de duas maneiras definindo uma task (tarefa isolada) ou então definindo um serviço. O primeiro basicamente se preocupa que o container inicie e realize sua task, geralmente morrendo depois. Já no caso dos services a ideia é manter os containers rodando e respondendo long term, por exemplo em um serviço Web, então além da definição da task que esse serviço vai manter, é possível gerenciar instâncias em diferentes zonas de disponibilidade, além de outros serviços para melhora de desenpenho e disponibilidade, como load balancers.
+Basicamente os clusters criados no ECS podem iniciar containers de duas maneiras: definindo uma task (tarefa isolada) ou então definindo um serviço. O primeiro basicamente se preocupa que o container inicie e realize sua atividade, geralmente morrendo depois disso. Já no caso dos services a ideia é manter os containers rodando e respondendo a longo prazo, por exemplo em um serviço Web, então além da definição da task, é possível gerenciar instâncias em diferentes zonas de disponibilidade, além de outros serviços para melhora de desempenho e disponibilidade, como load balancers e autoscaling.
 
-Como tudo se baseia na definição de tarefas e criar um serviço não é nada complexo, vamos focar na criação de uma dessas tasks e verificar o nosso container rodando. Para quem está começando a CLI ajuda com a geração de uma task de exemplo com o comando abaixo.
+Como tudo se baseia na definição de tarefas e criar um serviço não é nada complexo, vamos focar na criação de uma dessas tasks e verificar o nosso container rodando.
+
+Para quem está começando, a CLI ajuda com a geração de uma task de exemplo e você pode simplesmente popular conforme sua necessidade.
+
 
 ```shell
 $ aws ecs register-task-definition --generate-cli-skeleton
 ```
 
-A task para rodar nosso projeto de exemplo ficou como a task abaixo, agora tudo que precisamos é do comando para registro dessa task e tudo pronto.
+A tarefa para rodar nosso projeto pode ser definida dentro de um arquivo JSON seguindo o modelo gerado pelo último comando. O arquivo foi salvo com o nome node-project-definition.json e foi utilizado como input para o comando de definição da tarefa.
 
 ```json
 {
-  “containerDefinitions”: [
-    {
-      “name”: "nodeproject",
-      “image”: “pedrocesarti/node-project-sample”,
-      “essential”: true,
-      “portMappings”: [
+    "family": "nodeproject",
+    "containerDefinitions": [
         {
-          “containerPort”: 5000,
-          “hostPort”: 80
+            "name": "nodeproject",
+            "image": "pedrocesarti/node-project-sample",
+            "cpu": 500,
+            "memory": 20,
+
+            "portMappings": [
+                {
+                    "containerPort": 5000,
+                    "hostPort": 80
+                }
+            ]
         }
-      ],
-      “memory”: 500,
-      “cpu”: 10
-    }
- ],
- “family”: “nodeproject”
+    ]
 }
 ```
+```shell
+$ ecs register-task-definition --family nodeproject --cli-input-json file://node-project-definition.json
+```
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/5ze3jvd60v1b881/Screen%20Shot%202016-09-08%20at%2011.34.44%20AM.png?dl=0"ECS Task"></p>
 
-
+Após a definição da task, o último estágio seria a solicitação para execução desta atividade no cluster que criamos anteriormente, esse passo é bem simples e necessitamos somente do comando abaixo.
+```shell
+aws ecs run-task --cluster NodeProjectSample --task-definition nodeproject:1
+```
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/fuddzvhg5wbapnp/Screen%20Shot%202016-09-08%20at%2011.21.59%20AM.png?dl=0"ECS Cluster"></p>
+Se você acessar a instância do cluster você pode verificar o container rodando.
+<p align="center"><img src="https://dl.dropboxusercontent.com/s/1ya76afucl6xmn6/Screen%20Shot%202016-09-08%20at%2011.25.39%20AM.png?dl=0"ECS Cluster"></p>
 Se você deseja mais informações sobre definições de tasks e execução das mesmas, você pode verificar [aqui](http://docs.aws.amazon.com/pt_br/AmazonECS/latest/developerguide/task_definition_parameters.html) a melhor maneira de implementar elas.
 
+O ECS é sim uma grande opção de ferramenta para colocar containers em execução, a grande ideia é que possamos definir stacks de aplicação em containers e a forma de escalar estas definições se torna muito poderosa e sem necessidade de demais configurações.
 
 
 
-
-
-
-## O que tudo isso quer dizer em linhas gerais?
+## Vamos encerrar?
 
 Como custumo dizer, a melhor ferramenta é aquela que atende melhor as suas necessidades e essa é basicamente a ideia deste post. Já tive que usar todas estas ferramentas em diferentes aplicações mas nunca deixei de lado a ideia de automatizar ao máximo o que eu fazia e a melhor forma de se adequar ao que o projeto precisava. Então espero que você tenha aprendido algo novo ou tido pelo menos algum insight sobre formas de utilizar containers na AWS.
 
@@ -233,6 +244,3 @@ Links do repo e da imagem usada no post..
 Link também para o post do Gustavo Costa que também fala de [deploy ágil usando Docker](http://blog.concretesolutions.com.br/2016/01/deploy-agil-com-docker/) e para o post do Wesley Silva que mostra um [passo a passo de como dockerizar sua aplicação Linux](http://blog.concretesolutions.com.br/2015/07/como-dockerizar-aplicacao-linux/).
 
 Ficou alguma dúvida ou tem algum comentário a fazer? Aproveite os campos abaixo. Quer trabalhar com DevOps em uma empresa verdadeiramente ágil? Acesse aqui. Até a próxima!
-
-
-
