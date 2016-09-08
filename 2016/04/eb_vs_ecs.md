@@ -182,9 +182,39 @@ $ aws ecs list-container-instances --cluster NodeProjectSample
 }
 ```
 
-Os clusters iniciados no ECS podem ser utilizados com duas finalidades, a execução de tasks ou de serviços, sendo a principal diferença a definição da vida útil da sua aplicação. No caso das tasks a ideia é que o container suba realize sua task e morra. Já no caso dos services a ideia é manter os containers rodando e respondendo pelo máximo tempo possível. 
+Basicamente os clusters iniciados no ECS podem iniciar containers de duas maneiras definindo uma task (tarefa isolada) ou então definindo um serviço. O primeiro basicamente se preocupa que o container inicie e realize sua task, geralmente morrendo depois. Já no caso dos services a ideia é manter os containers rodando e respondendo long term, por exemplo em um serviço Web, então além da definição da task que esse serviço vai manter, é possível gerenciar instâncias em diferentes zonas de disponibilidade, além de outros serviços para melhora de desenpenho e disponibilidade, como load balancers.
 
-Como grande parte do nosso trabalho é manter aplicações rodando long term, vamos dar mais foco a essa segunda abordagem. Mas se você deseja mais informações sobre definições de tasks e execução das mesmas, você pode verificar [aqui](http://docs.aws.amazon.com/pt_br/AmazonECS/latest/developerguide/task_definition_parameters.html) a melhor maneira de implementar elas.
+Como tudo se baseia na definição de tarefas e criar um serviço não é nada complexo, vamos focar na criação de uma dessas tasks e verificar o nosso container rodando. Para quem está começando a CLI ajuda com a geração de uma task de exemplo com o comando abaixo.
+
+```shell
+$ aws ecs register-task-definition --generate-cli-skeleton
+```
+
+A task para rodar nosso projeto de exemplo ficou como a task abaixo, agora tudo que precisamos é do comando para registro dessa task e tudo pronto.
+
+```json
+{
+  “containerDefinitions”: [
+    {
+      “name”: "nodeproject",
+      “image”: “pedrocesarti/node-project-sample”,
+      “essential”: true,
+      “portMappings”: [
+        {
+          “containerPort”: 5000,
+          “hostPort”: 80
+        }
+      ],
+      “memory”: 500,
+      “cpu”: 10
+    }
+ ],
+ “family”: “nodeproject”
+}
+```
+
+
+Se você deseja mais informações sobre definições de tasks e execução das mesmas, você pode verificar [aqui](http://docs.aws.amazon.com/pt_br/AmazonECS/latest/developerguide/task_definition_parameters.html) a melhor maneira de implementar elas.
 
 
 
