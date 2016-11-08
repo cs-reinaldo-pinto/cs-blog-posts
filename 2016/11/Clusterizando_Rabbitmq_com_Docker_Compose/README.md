@@ -254,11 +254,11 @@ Com isso vamos poder ver algo parecido com isso:
 
 Para verificarmos se tudo subiu como planejado, vamos digitar: `docker ps`
 
-![docker_ps](imagens/docker_ps)
+![docker_ps](imagens/docker_ps.png)
 
 Podemos abrir o browser e digitar: `localhost:8080`, por exemplo, e veremos a tela de login do [RabbitMQ](http://www.rabbitmq.com/), digite o usuário e a senha que configuramos e Voalá:
 
-![rabbit_admin_page](imagens/rabbit_admin_page)
+![rabbit_admin_page](imagens/rabbit_admin_page.png)
 
 Aleluia irmãos  :raised_hands:! Tudo funcionando a pleno vapor, mas e se tivermos algum problema em algum dos nós? E se algum deles cair? Vamos fazer um teste  :smiling_imp:, vamos parar um dos nós e verificar como o [RabbitMQ](http://www.rabbitmq.com/) vai se comportar. Volte para o terminal e digite: `docker stop rabbitmq1`
 
