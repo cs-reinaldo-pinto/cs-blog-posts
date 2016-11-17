@@ -155,7 +155,7 @@ Primeiro vamos criar um Dockerfile para fazer uma imagem do [HAProxy](http://www
 
 Agora cole no Dockerfile os comandos abaixo:
 
-```
+```bash
  FROM haproxy:1.6
 
  ENV HAPROXY_USER haproxy
@@ -174,7 +174,7 @@ Com esse Dockerfile vai ser criado uma imagem com um usuário haproxy e ja vai c
 
 No mesmo diretório, vamos criar um arquivo chamado `haproxy.cfg` com o seguinte conteúdo:
 
-```
+```bash
 global
  	  log 127.0.0.1	local0 info
     chroot /var/lib/haproxy
