@@ -29,7 +29,8 @@ Com tudo instalado, vamos começar a destruir o teclado.  :musical_keyboard:
 
 Vamos começar criando nosso script de subida dos nossos docker's. Crie um arquivo chamado docker-compose.yml: `vim docker-compose.yml`
 Agora copie e cole o código abaixo no seu arquivo:
-```
+
+```yml
 version: '2'
 services:
   rabbitmq1:
@@ -115,6 +116,7 @@ services:
       - rabbitmq3:rabbitmq3
       - rabbitmq4:rabbitmq4
 ```
+
 **version: '2'**  :arrow_right: Com isso ja trabalharemos com as novas funcionalidades do docker-compose.
 
 **services:** :arrow_right: Aqui vamos setar todos os serviços que iremos utilizar, todos os docker que irão subir para que nossa aplicação funcione.
@@ -217,7 +219,7 @@ O processo deverá ser algo parecido com isso:
 
 Agora vamos juntar tudo isso :scream:. Calma que tudo vai dar certo  :sweat_smile:. Vamos criar um shell script bem básico para subir tudo de uma vez :heart_eyes:. Nesse mesmo diretório que criamos os outros arquivos, vamos criar um arquivo(prometo que é o último :pray:) com o nome de start_all.sh: `vim start_all.sh` e cole o código abaixo:
 
-```
+```bash
 #!/bin/bash
 # "Bruno Luis Cardoso Novo <bruno.novo@concrete.com.br>"
 # Script to manage the containers execution
@@ -279,15 +281,15 @@ Link's interessantes
 
 Bom pessoal, é isso. Essa foi uma maneira mais simples de subirmos um [RabbitMQ](http://www.rabbitmq.com/) e começarmos a utilizá-lo nas nossas futuras aplicações. Se quiser se aprofundar ainda mais no assunto existem vários link's bem interessantes e que darão uma visão bem mais técnica de sua utilização.
 
-https://www.rabbitmq.com/
+[https://www.rabbitmq.com/](https://www.rabbitmq.com/)
 
-http://www.concretesolutions.com.br/2012/01/26/rabbitmq-conceitos-basicos/
+[http://www.concretesolutions.com.br/2012/01/26/rabbitmq-conceitos-basicos/](http://www.concretesolutions.com.br/2012/01/26/rabbitmq-conceitos-basicos/)
 
-http://www.devmedia.com.br/introducao-ao-amqp-com-rabbitmq/33036
+[http://www.devmedia.com.br/introducao-ao-amqp-com-rabbitmq/33036](http://www.devmedia.com.br/introducao-ao-amqp-com-rabbitmq/33036)
 
-http://www.pognao.com.br/2013/04/rabbitmq.html
+[http://www.pognao.com.br/2013/04/rabbitmq.html](http://www.pognao.com.br/2013/04/rabbitmq.html)
 
-https://www.portalgsti.com.br/rabbitmq/sobre/
+[https://www.portalgsti.com.br/rabbitmq/sobre/](https://www.portalgsti.com.br/rabbitmq/sobre/)
 
 Agradecimento
 -------
