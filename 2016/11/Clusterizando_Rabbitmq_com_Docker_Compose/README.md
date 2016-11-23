@@ -184,7 +184,6 @@ listen stats
     timeout client 10000
     timeout connect 10000
     timeout server 30000
-    #``stats hide-version
     stats auth guest:guest
 
 listen rabbitmq-tcp
@@ -266,7 +265,7 @@ Podemos verificar que o `rabbitmq1` que paramos está off mas o próprio RabbitM
 
 Para retornar o `rabbitmq1` de volta das cinzas é só digitar: `docker start rabbitmq1` e pronto. Tudo de volta a normalidade.
 
-Uma outra maneira de ficarmos de olho :eyes: nos rabbit's é utilizar o painel do HAProxy: `localhost:20000`
+Uma outra maneira de ficarmos de olho :eyes: nos Rabbit's é utilizar o painel do HAProxy: `localhost:20000`
 
 ![HAProxy_admin_page](HAProxy_admin_page.png)
 
