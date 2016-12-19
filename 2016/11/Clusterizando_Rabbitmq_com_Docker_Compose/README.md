@@ -30,7 +30,7 @@ Com tudo instalado, vamos começar a destruir o teclado.  :musical_keyboard:
 Vamos começar criando nosso script de subida dos nossos docker's. Crie um arquivo chamado docker-compose.yml: `vim docker-compose.yml`
 Agora copie e cole o código abaixo no seu arquivo:
 
-```yml
+```
 version: '2'
 services:
   rabbitmq1:
@@ -155,8 +155,8 @@ Primeiro vamos criar um Dockerfile para fazer uma imagem do [HAProxy](http://www
 
 Agora cole no Dockerfile os comandos abaixo:
 
-```bash
- FROM haproxy:1.6
+```
+FROM haproxy:1.6
 
  ENV HAPROXY_USER haproxy
 
@@ -168,13 +168,13 @@ Agora cole no Dockerfile os comandos abaixo:
  COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
 
  CMD ["haproxy", "-db", "-f", "/usr/local/etc/haproxy/haproxy.cfg"]
-```
+ ```
 
 Com esse Dockerfile vai ser criado uma imagem com um usuário haproxy e ja vai copiar nosso arquivo de configuração para dentro dela, ja deixando ela pronta para uso.
 
 No mesmo diretório, vamos criar um arquivo chamado `haproxy.cfg` com o seguinte conteúdo:
 
-```bash
+```
 global
  	  log 127.0.0.1	local0 info
     chroot /var/lib/haproxy
@@ -219,7 +219,7 @@ O processo deverá ser algo parecido com isso:
 
 Agora vamos juntar tudo isso :scream:. Calma que tudo vai dar certo  :sweat_smile:. Vamos criar um shell script bem básico para subir tudo de uma vez :heart_eyes:. Nesse mesmo diretório que criamos os outros arquivos, vamos criar um arquivo(prometo que é o último :pray:) com o nome de start_all.sh: `vim start_all.sh` e cole o código abaixo:
 
-```bash
+```
 #!/bin/bash
 # "Bruno Luis Cardoso Novo <bruno.novo@concrete.com.br>"
 # Script to manage the containers execution
@@ -274,7 +274,7 @@ Para retornar o `rabbitmq1` de volta das cinzas é só digitar: `docker start ra
 
 Uma outra maneira de ficarmos de olho :eyes: nos rabbit's é utilizar o painel do [HAProxy](http://www.haproxy.org/): `localhost:20000`
 
-![HAProxy_admin_page](HAProxy_admin_page.png)
+![HAProxy_admin_page](imagens/HAProxy_admin_page.png)
 
 Link's interessantes
 -----------
